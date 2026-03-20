@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
     >
-      <body className="bg-black text-white selection:bg-brand-purple/30 selection:text-white">
+      <body className="bg-black text-white selection:bg-white/30 selection:text-white">
       <div className="absolute top-0 w-full z-50">
                 <Header />
               </div>

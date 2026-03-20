@@ -25,7 +25,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 href={item.href}
                 className={`block px-3 py-2 text-sm rounded-md transition-all duration-200 ${
                   isActive 
-                    ? 'bg-brand-purple/20 text-brand-purple font-medium' 
+                    ? 'bg-white/20 text-white font-medium' 
                     : 'text-white/70 hover:text-white hover:bg-white/5'
                 }`}
               >

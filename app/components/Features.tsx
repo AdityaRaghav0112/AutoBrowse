@@ -23,17 +23,17 @@ export default function Features() {
     {
       title: "3D Real-Time",
       description: "Render complex scenes instantly with cutting-edge spatial technology.",
-      icon: <Zap className="w-8 h-8 text-brand-blue" />
+      icon: <Zap className="w-8 h-8 text-white" />
     },
     {
       title: "Immersive Web",
       description: "Create deep, engaging user experiences with highly interactive 3D elements.",
-      icon: <Globe className="w-8 h-8 text-brand-purple" />
+      icon: <Globe className="w-8 h-8 text-white" />
     },
     {
       title: "Seamless Design",
       description: "Intuitive glassmorphism and beautiful micro-animations out of the box.",
-      icon: <Layers className="w-8 h-8 text-brand-cyan" />
+      icon: <Layers className="w-8 h-8 text-white" />
     }
   ];
 
@@ -73,12 +73,12 @@ export default function Features() {
               variants={childVariants}
               whileHover={{ 
                 y: -10, 
-                boxShadow: "0 20px 50px -10px rgba(157, 78, 221, 0.4)",
-                borderColor: "rgba(157, 78, 221, 0.5)"
+                boxShadow: "0 20px 50px -10px rgba(255, 255, 255, 0.4)",
+                borderColor: "rgba(255, 255, 255, 0.5)"
               }}
               className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-300 group relative overflow-hidden"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
