@@ -38,7 +38,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="px-4 relative z-10 bg-gradient-to-t from-black via-black/90 to-transparent min-h-screen flex items-center">
+    <section id="features" className="px-4 relative z-10 bg-gradient-to-t from-black via-black/90 to-transparent min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-16">
           <motion.h2 

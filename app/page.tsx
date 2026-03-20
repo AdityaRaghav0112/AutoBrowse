@@ -7,16 +7,16 @@ import Use from "./components/Use";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       {/* 3D Background Fixed at the back */}
       <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
         <Scene />
       </div>
 
       <div className="relative z-10 w-full">
-        <div className="absolute top-0 w-full z-50">
+        {/* <div className="absolute top-0 w-full z-50">
           <Header />
-        </div>
+        </div> */}
 
         <Hero />
         <Use/>

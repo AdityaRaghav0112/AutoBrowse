@@ -1,19 +1,39 @@
 "use client";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: string
+  ) => {
+    if (item === "Features") {
+      e.preventDefault();
+
+      // If already on home page, just scroll
+      const featuresSection = document.getElementById("features");
+      if (featuresSection) {
+        featuresSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Navigate to home first, then scroll after load
+        router.push("/#features");
+      }
+    }
+    // For all other items, Link handles routing normally
+  };
 
   return (
     <motion.header
@@ -21,25 +41,25 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`w-full transition-all duration-300 z-50 fixed top-0 left-0 ${
-        scrolled 
-          ? "bg-black/60 backdrop-blur-md border-b border-white/10 shadow-lg shadow-brand-purple/5 py-4" 
+        scrolled
+          ? "bg-black/60 backdrop-blur-md border-b border-white/10 shadow-lg shadow-brand-purple/5 py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {/* Logo element */}
+        <Link href="/" onClick={()=> window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2 cursor-default">
           <div className="w-8 h-8 rounded bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(157,78,221,0.5)]">
-            N
+            AB
           </div>
           <span className="font-bold text-xl tracking-tight text-white">AutoBrowse</span>
-        </div>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {['Features', 'Demo', 'Pricing'].map((item) => (
+          {['Features', 'Docs', 'Pricing'].map((item) => (
             <Link
-              key={item} 
-              href={`/${item.toLowerCase()}`} 
+              key={item}
+              href={item === "Features" ? "/#features" : `/${item.toLowerCase()}`}
+              onClick={(e) => handleNavClick(e, item)}
               className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group tracking-wider uppercase"
             >
               {item}
@@ -52,7 +72,6 @@ export default function Header() {
           Launch App
         </button>
 
-        {/* Mobile menu toggle */}
         <button className="md:hidden text-white/80 hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
         </button>

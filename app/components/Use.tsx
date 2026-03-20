@@ -31,6 +31,7 @@ export default function Use() {
       console.error("Failed to run browser-use:", error);
     } finally {
       setIsLoading(false);
+      setPrompt("");
       // Optional: Clear or leave prompt, depending on UX. Leaving it for now.
     }
   };
