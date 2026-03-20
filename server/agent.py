@@ -2,6 +2,7 @@
 import asyncio
 from dotenv import load_dotenv
 import os
+import sys
 from browser_use import Browser, Agent, ChatGoogle
 
 async def main():
@@ -14,16 +15,22 @@ async def main():
         api_key=os.getenv("GEMINI_API_KEY")
     )
 
-    agent = Agent(
-        task=(
-            "Step 1: Go to https://www.amazon.in/ "
-            "Step 2: Search for Nike Shoes "
-            "Step 3: Open the first product and look for the price. "
-            "After that stop the task."
-        ),
-        llm=llm,
-        browser=browser
-    )
+    # Get the task from the command line argument, or use a default if not provided
+    if len(sys.argv) > 1:
+        task = sys.argv[1]
+    # else:
+    #     task = (
+    #         "Step 1: Go to https://www.amazon.in/ "
+    #         "Step 2: Search for Nike Shoes "
+    #         "Step 3: Open the first product and look for the price. "
+    #         "After that stop the task."
+    #     )
+
+        agent = Agent(
+            task=task,
+            llm=llm,
+            browser=browser
+        )
 
 
     result = await agent.run()
