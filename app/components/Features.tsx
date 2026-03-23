@@ -76,7 +76,7 @@ export default function Features() {
                 boxShadow: "0 20px 50px -10px rgba(255, 255, 255, 0.4)",
                 borderColor: "rgba(255, 255, 255, 0.5)"
               }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-300 group relative overflow-hidden"
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-30 group relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-300">

@@ -19,7 +19,7 @@ export default function Hero() {
         </p>
         <motion.button
           onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
-          whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px rgba(255, 255, 255, 0.6)" }}
+          whileHover={{ scale: 1.05, boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.6)" }}
           whileTap={{ scale: 0.95 }}
           className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold relative overflow-hidden group transition-colors hover:text-black"
         >

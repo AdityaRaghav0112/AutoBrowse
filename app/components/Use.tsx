@@ -73,9 +73,9 @@ export default function Use() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative max-w-3xl mx-auto group"
         >
-          <div className="absolute -inset-1 bg-white rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
+          <div className="absolute -inset-1 bg-white rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-100 group-hover:duration-200"></div>
           
-          <div className="relative bg-black/60 backdrop-blur-3xl border border-white/10 rounded-3xl flex flex-col md:flex-row shadow-2xl focus-within:ring-1 focus-within:ring-white/50 transition-all items-end">
+          <div className="relative bg-black/60 backdrop-blur-3xl border border-white/10 rounded-3xl flex flex-col md:flex-row shadow-sm focus-within:ring-1 focus-within:ring-white/50 transition-all items-end">
             <textarea
               ref={textareaRef}
               value={prompt}
@@ -90,7 +90,7 @@ export default function Use() {
             <button 
               onClick={handleSubmit}
               disabled={isLoading || !prompt.trim()}
-              className="md:mt-0 mt-4 w-full md:w-auto bg-white text-black p-5 m-2 rounded-2xl flex items-center justify-center transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] md:ml-2 font-bold tracking-wider disabled:opacity-50 disabled:pointer-events-none"
+              className="md:mt-0 mt-4 w-full md:w-auto bg-white text-black p-5 m-2 rounded-2xl flex items-center justify-center transition-all hover:scale-105 hover:shadow-[0_0_0px_rgba(255,255,255,0.6)] md:ml-2 font-bold tracking-wider disabled:opacity-50 disabled:pointer-events-none"
             >
               <span className="md:hidden mr-2">{isLoading ? "STARTING..." : "EXECUTE"}</span>
               {isLoading ? (
