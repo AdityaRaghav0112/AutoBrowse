@@ -23,7 +23,7 @@ export default function Home() {
         <Features />
 
         {/* Footer */}
-        <footer className="border-t border-white/10 bg-black/80 backdrop-blur-md py-8 text-center text-sm text-gray-500">
+        <footer className="border-t border-neutral-800 bg-neutral-950 py-8 text-center text-sm text-gray-500">
           <p>© 2026 AutoBrowse Next-Gen 3D Web. All rights reserved.</p>
         </footer>
       </div>

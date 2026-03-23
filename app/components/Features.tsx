@@ -38,7 +38,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="px-4 relative z-10 bg-gradient-to-t from-black via-black/90 to-transparent min-h-screen flex items-center">
+    <section id="features" className="px-4 relative z-10 bg-neutral-950 min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-16">
           <motion.h2 
@@ -73,13 +73,13 @@ export default function Features() {
               variants={childVariants}
               whileHover={{ 
                 y: -10, 
-                boxShadow: "0 20px 50px -10px rgba(255, 255, 255, 0.4)",
-                borderColor: "rgba(255, 255, 255, 0.5)"
+                boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.4)",
+                borderColor: "rgba(255, 255, 255, 0.2)"
               }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-30 group relative overflow-hidden"
+              className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 transition-all duration-30 group relative overflow-hidden"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-300">
+              <div className="absolute top-0 left-0 w-full h-1 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <div className="w-16 h-16 rounded-full bg-neutral-800 flex items-center justify-center mb-6 border border-neutral-700 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3 text-white tracking-wide">{feature.title}</h3>

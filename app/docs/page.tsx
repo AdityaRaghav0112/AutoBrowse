@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function Introduction() {
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-screen">
+    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
         <h1 className="text-4xl font-bold tracking-tight mb-4">Introduction</h1>
         <p className="text-lg text-white/70 leading-relaxed">
-          Welcome to the AutoBrowse documentation. AutoBrowse is a powerful, AI-driven automation 
-          tool built to navigate the web just like a human, completing complex multi-step processes 
+          Welcome to the AutoBrowse documentation. AutoBrowse is a powerful, AI-driven automation
+          tool built to navigate the web just like a human, completing complex multi-step processes
           autonomously.
         </p>
       </div>
@@ -38,13 +38,15 @@ export default function Introduction() {
           </li>
         </ul>
       </div>
-      
+
       <div className="pt-4 border-t border-white/10">
-        <h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
-        <p className="text-white/70">
-          Ready to dive in? Head over to the <Link href="/docs/quickstart" className="text-white/70 hover:text-white transition-colors underline underline-offset-4">Quickstart guide</Link> to install 
-          and configure your first agent in minutes.
-        </p>
+        <h2 className="text-2xl font-semibold mb-4">How it works?</h2>
+        <ul className="ml-5 list-disc flex flex-col gap-1">
+          <li>Uses <a href="https://browser-use.com/" className="underline" target="_blank">browser-use</a> for the backend and Navigation through the websites.</li>
+          <li>Can work with any LLM provided the api key (e.g., OpenAI, Gemini, etc.)</li>
+          <li>Uses <a href="https://github.com/adityaraghuvanshi0/autobrowse" className="underline" target="_blank">AutoBrowse</a> for the frontend and UI.</li>
+          <li>The scraping can be done using a different or the same API or LLM. It uses a custom Python script developed by AutoBrowse</li>
+        </ul>
       </div>
     </div>
   );

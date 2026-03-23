@@ -14,17 +14,16 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 text-white text-shadow-sm">
           AutoBrowse
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed backdrop-blur-sm bg-black/10 p-2 rounded-lg">
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed p-2">
           Experience the future of digital innovation. Immersive web design powered by cutting-edge spatial technology.
         </p>
         <motion.button
           onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
-          whileHover={{ scale: 1.05, boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.6)" }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold relative overflow-hidden group transition-colors hover:text-black"
+          className="px-8 py-4 bg-white text-black rounded-full font-semibold relative overflow-hidden group transition-colors hover:bg-gray-200"
         >
           <span className="relative z-10 tracking-widest uppercase text-sm">Get Started Now</span>
-          <div className="absolute inset-0 bg-white transform translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
         </motion.button>
       </motion.div>
       

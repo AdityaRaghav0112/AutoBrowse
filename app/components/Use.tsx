@@ -45,14 +45,14 @@ export default function Use() {
 
   return (
     <section id="demo" className="py-24 px-4 relative z-10 font-sans">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center min-h-[80vh]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/30 text-white mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800 border border-neutral-700 text-white mb-6">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-semibold tracking-wide uppercase">AI Powered</span>
           </div>
@@ -61,7 +61,7 @@ export default function Use() {
             What do you want to automate?
           </h2>
           
-          <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-200 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
             Describe your task in plain english. Our browser agent will take over and execute it seamlessly.
           </p>
         </motion.div>
@@ -73,9 +73,7 @@ export default function Use() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative max-w-3xl mx-auto group"
         >
-          <div className="absolute -inset-1 bg-white rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-100 group-hover:duration-200"></div>
-          
-          <div className="relative bg-black/60 backdrop-blur-3xl border border-white/10 rounded-3xl flex flex-col md:flex-row shadow-sm focus-within:ring-1 focus-within:ring-white/50 transition-all items-end">
+          <div className="relative bg-neutral-900 border border-neutral-800 rounded-3xl flex flex-col md:flex-row shadow-sm focus-within:border-neutral-600 transition-all items-end">
             <textarea
               ref={textareaRef}
               value={prompt}

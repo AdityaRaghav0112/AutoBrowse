@@ -42,7 +42,7 @@ export default function Header() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`w-full transition-all duration-300 z-50 fixed top-0 left-0 ${
         scrolled
-          ? "bg-black/60 backdrop-blur-md border-b border-white/10 shadow-lg shadow-white/5 py-4"
+          ? "bg-neutral-950 border-b border-neutral-800 shadow-lg py-4"
           : "bg-transparent py-6"
       }`}
     >
@@ -68,7 +68,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <button className="hidden md:block px-6 py-2.5 bg-white/10 hover:bg-white text-white hover:text-black text-sm font-semibold rounded-full border border-white/20 backdrop-blur-sm transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:border-white/50 uppercase tracking-widest">
+        <button className="hidden md:block px-6 py-2.5 bg-neutral-800 hover:bg-white text-white hover:text-black text-sm font-semibold rounded-full border border-neutral-700 transition-all hover:border-white uppercase tracking-widest">
           Launch App
         </button>
 
