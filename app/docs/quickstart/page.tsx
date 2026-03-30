@@ -30,23 +30,12 @@ OPENAI_API_KEY=your_api_key_here`} />
         </div>
 
         {/* Step 3 */}
-        {/* <div className="relative pl-8">
+        <div className="relative pl-8">
           <div className="absolute left-[-5px] top-2 w-3 h-3 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] border-2 border-black" />
-          <h2 className="text-xl font-semibold mb-3">3. First Script</h2>
+          <h2 className="text-xl font-semibold mb-3">3. Run on local</h2>
           <p className="text-white/70 mb-4 text-sm">Run a simple navigation task using the client.</p>
-          <CodeBlock code={`import { AutoBrowse } from 'autobrowse';
-
-const agent = new AutoBrowse({
-  apiKey: process.env.AUTOBROWSE_API_KEY
-});
-
-// The agent will reason about how to achieve this goal
-const result = await agent.run({
-  task: 'Go to github.com and find the trending repositories today'
-});
-
-console.log('Result:', result.data);`} />
-        </div> */}
+          <CodeBlock code={`npm run dev`} />
+        </div>
       </div>
     </div>
   );

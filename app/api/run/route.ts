@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { runBrowser } from '../../../server/run';
+import { runBrowser } from '../../server/run';
 
 export async function POST(req: Request) {
   try {

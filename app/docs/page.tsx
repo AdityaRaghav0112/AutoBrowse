@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Introduction() {
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
         <h1 className="text-4xl font-bold tracking-tight mb-4">Introduction</h1>
         <p className="text-lg text-white/70 leading-relaxed">

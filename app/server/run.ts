@@ -8,7 +8,7 @@ export async function runBrowser(prompt: string) {
   
   try {
     // Note: ensure the user has installed browser-use and langchain-google-genai in their Python environment
-    const command = `.venv/bin/python server/agent.py "${prompt.replace(/"/g, '\\"')}"`;
+    const command = `.venv/bin/python app/server/agent.py "${prompt.replace(/"/g, '\\"')}"`;
     
     const { stdout, stderr } = await execPromise(command);
     
