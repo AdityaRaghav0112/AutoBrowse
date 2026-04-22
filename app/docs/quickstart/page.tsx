@@ -24,7 +24,7 @@ export default function Quickstart() {
         <div className="relative pl-8 before:absolute before:left-0 before:top-3 before:bottom-[-32px] before:w-[2px] before:bg-white/10 last:before:hidden">
           <div className="absolute left-[-5px] top-2 w-3 h-3 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] border-2 border-black" />
           <h2 className="text-xl font-semibold mb-3">2. Configuration</h2>
-          <p className="text-white/70 mb-4 text-sm">Set up your API key. Create a <code>.env</code> file your directory. You can use any LLM's API key</p>
+          <p className="text-white/70 mb-4 text-sm">Set up your API key. Create a <code>.env</code> file your directory. You can use any LLM&apos;s API key</p>
           <CodeBlock code={`GEMINI_API_KEY=your_api_key_here
 OPENAI_API_KEY=your_api_key_here`} />
         </div>

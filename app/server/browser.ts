@@ -1,4 +1,4 @@
-import { chromium, Browser, Page } from "playwright";
+import { chromium, Browser, BrowserContext, Page } from "playwright";
 
 let browser: Browser | null = null;
 
@@ -9,9 +9,20 @@ export async function getBrowser() {
     return browser;
 }
 
-export async function getPage() {
-    const browser = await getBrowser();
-    const context = await browser.newContext(); 
-    const page = await context.newPage();
-    return page;
+export interface PageSession {
+    page: Page;
+    cleanup: () => Promise<void>;
+}
+
+export async function getPage(): Promise<PageSession> {
+    const browserInstance = await getBrowser();
+    const context: BrowserContext = await browserInstance.newContext();
+    const page: Page = await context.newPage();
+    return {
+        page,
+        cleanup: async () => {
+            await page.close();
+            await context.close();
+        },
+    };
 }

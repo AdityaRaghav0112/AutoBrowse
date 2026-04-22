@@ -15,23 +15,17 @@ async def main():
         api_key=os.getenv("GEMINI_API_KEY")
     )
 
-    # Get the task from the command line argument, or use a default if not provided
+    # Get the task from the command line argument
     if len(sys.argv) > 1:
         task = sys.argv[1]
-    # else:
-    #     task = (
-    #         "Step 1: Go to https://www.amazon.in/ "
-    #         "Step 2: Search for Nike Shoes "
-    #         "Step 3: Open the first product and look for the price. "
-    #         "After that stop the task."
-    #     )
+    else:
+        raise ValueError("No task argument provided. Usage: agent.py <task>")
 
-        agent = Agent(
-            task=task,
-            llm=llm,
-            browser=browser
-        )
-
+    agent = Agent(
+        task=task,
+        llm=llm,
+        browser=browser
+    )
 
     result = await agent.run()
     print("Agent result:", result)

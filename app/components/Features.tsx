@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Layers, Zap } from "lucide-react";
+import { Laptop, Cpu, ShieldCheck } from "lucide-react";
 
 export default function Features() {
   const containerVariants = {
@@ -9,54 +9,53 @@ export default function Features() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
 
   const childVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7 } }
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
   const features = [
     {
-      title: "3D Real-Time",
-      description: "Render complex scenes instantly with cutting-edge spatial technology.",
-      icon: <Zap className="w-8 h-8 text-white" />
+      title: "Universal Control",
+      description: "Automate any web application, regardless of complexity or framework. From SaaS to Legacy.",
+      icon: <Laptop className="w-6 h-6 text-black" />
     },
     {
-      title: "Immersive Web",
-      description: "Create deep, engaging user experiences with highly interactive 3D elements.",
-      icon: <Globe className="w-8 h-8 text-white" />
+      title: "Agentic Intelligence",
+      description: "Powered by advanced LLMs that understand your intent and navigate like a human.",
+      icon: <Cpu className="w-6 h-6 text-black" />
     },
     {
-      title: "Seamless Design",
-      description: "Intuitive glassmorphism and beautiful micro-animations out of the box.",
-      icon: <Layers className="w-8 h-8 text-white" />
+      title: "Enterprise Grade",
+      description: "Encrypted, secure, and built for scale. Your automation runs in isolated, professional environments.",
+      icon: <ShieldCheck className="w-6 h-6 text-black" />
     }
   ];
 
   return (
-    <section id="features" className="px-4 relative z-10 bg-neutral-950 min-h-screen flex items-center">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16">
+    <section id="features" className="px-4 py-24 bg-[#fafafa]">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="mb-20 text-left border-l-2 border-black pl-8">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-4"
+            className="text-4xl md:text-5xl font-bold text-black mb-4"
           >
-            Explore the Void
+            Built for the modern web.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-neutral-500 max-w-xl font-light text-lg"
           >
-            Premium interfaces designed for the spatial computing era.
+            AutoBrowse provides the infrastructure to turn any browser into an autonomous worker.
           </motion.p>
         </div>
 
@@ -65,25 +64,19 @@ export default function Features() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12"
         >
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
               variants={childVariants}
-              whileHover={{ 
-                y: -10, 
-                boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.4)",
-                borderColor: "rgba(255, 255, 255, 0.2)"
-              }}
-              className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 transition-all duration-30 group relative overflow-hidden"
+              className="group"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-full bg-neutral-800 flex items-center justify-center mb-6 border border-neutral-700 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-white border border-neutral-100 shadow-sm flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white tracking-wide">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <h3 className="text-xl font-bold mb-3 text-black">{feature.title}</h3>
+              <p className="text-neutral-600 leading-relaxed font-light">
                 {feature.description}
               </p>
             </motion.div>

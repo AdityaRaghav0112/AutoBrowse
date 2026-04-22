@@ -4,38 +4,50 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden px-4">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden px-4 pt-32 pb-24">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-center z-10"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center z-10 max-w-4xl"
       >
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 text-white text-shadow-sm">
-          AutoBrowse
+        <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-neutral-500 uppercase bg-neutral-100 rounded-full">
+          AI-Powered Automation
+        </span>
+        <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 text-black leading-[1.1]">
+          Browse beyond <br />
+          <span className="text-neutral-400 font-light italic">boundaries.</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed p-2">
-          Experience the future of digital innovation. Immersive web design powered by cutting-edge spatial technology.
+        <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+          Experience the next generation of browser automation. Simple English commands, complex execution. Built for modern builders.
         </p>
-        <motion.button
-          onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-8 py-4 bg-white text-black rounded-full font-semibold relative overflow-hidden group transition-colors hover:bg-gray-200"
-        >
-          <span className="relative z-10 tracking-widest uppercase text-sm">Get Started Now</span>
-        </motion.button>
-      </motion.div>
-      
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-50"
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-white rounded-full" />
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.button
+            onClick={() => window.scrollTo({ top: 850, behavior: "smooth" })}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto px-10 py-5 bg-black text-white rounded-full font-bold shadow-2xl shadow-black/20 transition-all hover:bg-neutral-900"
+          >
+            Launch Agent
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto px-10 py-5 bg-white text-black border border-neutral-200 rounded-full font-bold transition-all hover:bg-neutral-50"
+          >
+            Watch Demo
+          </motion.button>
         </div>
+      </motion.div>
+
+      {/* Scroll indicator - Minimalist */}
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2.5 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-30"
+      >
+        <div className="w-[1px] h-12 bg-black" />
       </motion.div>
     </section>
   );

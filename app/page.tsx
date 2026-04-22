@@ -1,30 +1,23 @@
-import React from 'react';
-import Scene from './components/Scene';
+"use client";
 import Hero from './components/Hero';
 import Features from './components/Features';
-import Header from './components/Header'
 import Use from "./components/Use";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden">
-      {/* 3D Background Fixed at the back */}
-      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
-        <Scene />
-      </div>
-
+    <main className="relative min-h-screen bg-[#fafafa]">
       <div className="relative z-10 w-full">
-        {/* <div className="absolute top-0 w-full z-50">
-          <Header />
-        </div> */}
-
         <Hero />
-        <Use/>
-        <Features />
+        <div className="max-w-7xl mx-auto px-4 py-24 space-y-32">
+          <Use/>
+          <Features />
+        </div>
 
         {/* Footer */}
-        <footer className="border-t border-neutral-800 bg-neutral-950 py-8 text-center text-sm text-gray-500">
-          <p>© 2026 AutoBrowse Next-Gen 3D Web. All rights reserved.</p>
+        <footer className="border-t border-neutral-200 bg-white py-12 text-center text-sm text-neutral-500">
+          <div className="max-w-7xl mx-auto px-4">
+            <p>© 2026 AutoBrowse – Intelligent Browser Automation. Built for speed.</p>
+          </div>
         </footer>
       </div>
     </main>

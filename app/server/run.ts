@@ -1,16 +1,18 @@
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import util from 'util';
 
-const execPromise = util.promisify(exec);
+const execFilePromise = util.promisify(execFile);
 
 export async function runBrowser(prompt: string) {
   console.log("Executing backend Python script for browser-use with prompt:", prompt);
-  
+
   try {
     // Note: ensure the user has installed browser-use and langchain-google-genai in their Python environment
-    const command = `.venv/bin/python app/server/agent.py "${prompt.replace(/"/g, '\\"')}"`;
-    
-    const { stdout, stderr } = await execPromise(command);
+    // Using execFile with args array to prevent shell injection
+    const { stdout, stderr } = await execFilePromise(
+      '.venv/bin/python',
+      ['app/server/agent.py', prompt]
+    );
     
     if (stderr) {
       console.warn("Python execution warning/stderr:", stderr);
