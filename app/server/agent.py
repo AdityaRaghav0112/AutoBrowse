@@ -8,7 +8,7 @@ from browser_use import Browser, Agent, ChatGoogle
 async def main():
     load_dotenv()
 
-    browser = Browser(headless=False, keep_alive=False)
+    browser = Browser(headless=False, keep_alive=False, user_data_dir="./browser_profile")
 
     llm = ChatGoogle(
         model="gemini-flash-latest",

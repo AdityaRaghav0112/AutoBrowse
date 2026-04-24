@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import SmoothScroll from "./components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +30,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body className="bg-[#fafafa] text-[#171717] selection:bg-black/10 selection:text-black">
-      <div className="absolute top-0 w-full z-50">
-                <Header />
-              </div>
+      <SmoothScroll>
+        <div className="absolute top-0 w-full z-50">
+          <Header />
+        </div>
         {children}
+      </SmoothScroll>
       </body>
     </html>
   );
