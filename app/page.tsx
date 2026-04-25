@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Use from "./components/Use";
 import InteractiveFeatures from './components/InteractiveFeatures';
+import Features2 from './components/Features2';
 
 export default function Home() {
   return (
@@ -10,9 +11,10 @@ export default function Home() {
       <div className="relative z-10 w-full">
         <Hero />
         <InteractiveFeatures />
-        <div className="max-w-7xl mx-auto px-4 py-24 space-y-32">
+        <div className=" mx-auto px-4 py-24 space-y-32">
           <Use />
-          <Features />
+          {/* <Features /> */}
+          <Features2/>
         </div>
 
         <footer className="border-t border-neutral-200 bg-white py-12 text-center text-sm text-neutral-500">

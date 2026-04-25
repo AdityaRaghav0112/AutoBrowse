@@ -127,7 +127,7 @@ export default function Use() {
   };
 
   return (
-    <section ref={containerRef} id="demo" className="py-24 px-4 bg-white border border-neutral-100 rounded-[3rem] shadow-sm overflow-hidden">
+    <section ref={containerRef} id="demo" className="max-w-7xl mx-auto py-24 px-4 bg-white border border-neutral-100 rounded-[3rem] shadow-sm overflow-hidden">
       <div className="max-w-4xl mx-auto text-center min-h-[60vh] flex flex-col justify-center">
         <div>
           <div className="demo-header inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-50 border border-neutral-200 text-neutral-600 mb-8">
